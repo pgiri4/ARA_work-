@@ -45,7 +45,7 @@ def waveform_collector(data, ped, plot_wf = True, no_tqdm = False):
                 
         ara_root.del_TGraph()
         ara_root.del_usefulEvt()   
-        plt.savefig("Wf_R"+str(run)+"Ev_"+str(evt)+".png")
+        plt.savefig("new_Wf_R"+str(run)+"Ev_"+str(evt)+".png")
         plt.close()
     del ara_root, num_evts
 
