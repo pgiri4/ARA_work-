@@ -3,7 +3,7 @@ from tqdm import tqdm
 import click
 import matplotlib.pyplot as plt
 import sys
-sys.path.append("path/to/the/directory of ARA_work-/example_to_read_ARA_wf")
+sys.path.append("/home/pgiri/research/software/ARA_work-/example_to_read_ARA_wf")
 
 @click.command()
 @click.option('-d', '--data', type=str, help='ex) /data/exp/ARA/2018/unblinded/L1/ARA04/1027/run004434/event004434.root')
@@ -28,7 +28,7 @@ def waveform_collector(data, ped, plot_wf = True, no_tqdm = False):
     col =[]
     # loop over the events
     for evt in range(45,50):
-        if trig_type[evt] !=0:### trig_type[evt] =1 will be signal like and trig_type[evt] =0 will be noise like
+        if trig_type[evt] !=1:### trig_type[evt] =1 will be signal like and trig_type[evt] =0 will be noise like
           print('trig',trig_type[evt]) 
           continue
         print(" for event ", evt)
@@ -55,7 +55,6 @@ def waveform_collector(data, ped, plot_wf = True, no_tqdm = False):
         plt.savefig("test_data.png")
         plt.close()
     del ara_root, num_evts
-    print('len ',len(col[0]))
 
 if __name__ == "__main__":
    waveform_collector()  

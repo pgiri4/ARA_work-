@@ -8,7 +8,7 @@ from datetime import datetime
 import re
 
 # custom lib
-from ara_constant import ara_const
+from tools.ara_constant import ara_const
 
 #link AraRoot
 ARA_UTIL_INSTALL_DIR = '/home/pgiri/analysis/AraSoft/AraUtil'
